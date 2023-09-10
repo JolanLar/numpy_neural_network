@@ -55,13 +55,13 @@ class NeuralNetwork:
 
 if __name__ == "__main__":
     # Create layer 1 (200 neurons, each with 3 inputs)
-    layer1 = NeuronLayer(200, 3)
+    layer1 = NeuronLayer(100, 3)
 
     # Create layer 2 (200 neurons, each with 200 inputs)
-    layer2 = NeuronLayer(200, 200)
+    layer2 = NeuronLayer(100, 100)
 
     # Create layer 3 (3 neurons, each with 200 inputs)
-    layer3 = NeuronLayer(3, 200)
+    layer3 = NeuronLayer(3, 100)
 
     # Combine the layers to create a neural network
     neural_network = NeuralNetwork(layer1, layer2, layer3, learning_rate=0.01)
@@ -90,7 +90,7 @@ if __name__ == "__main__":
 
     # Train the neural network using the training set.
     # Do it 120,000 times to allow for better convergence.
-    neural_network.train(training_set_inputs, training_set_outputs, 120000)
+    neural_network.train(training_set_inputs, training_set_outputs, 10000)
 
     # Iterate through all possible combinations of [0, 1] for the input
     input_combinations = [(i, j, k) for i in [0, 1] for j in [0, 1] for k in [0, 1]]
